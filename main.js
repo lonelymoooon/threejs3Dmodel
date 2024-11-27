@@ -53,11 +53,11 @@ scene.add(groundMesh);
 // Матильда
 let matildaModel = null;
 
-const loader = new GLTFLoader().setPath('cat/');
-loader.load('scene.glb', (glb) => {
+const loader = new GLTFLoader().setPath('matilda/');
+loader.load('scene.gltf', (gltf) => {
   console.log('loading model');
   matildaModel = gltf.scene;
-
+  
   matildaModel.traverse((child) => {
     if (child.isMesh) {
       child.castShadow = true;
