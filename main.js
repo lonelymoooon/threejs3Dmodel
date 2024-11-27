@@ -54,7 +54,7 @@ scene.add(groundMesh);
 let matildaModel = null;
 
 const loader = new GLTFLoader().setPath('cat/');
-loader.load('scene.gltf', (gltf) => {
+loader.load('scene.glb', (glb) => {
   console.log('loading model');
   matildaModel = gltf.scene;
 
