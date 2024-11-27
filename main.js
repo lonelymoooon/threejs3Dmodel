@@ -15,11 +15,9 @@ renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 document.body.appendChild(renderer.domElement);
 
-
-
 // Камера
 const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
-camera.position.set(20, 10, 20);
+camera.position.set(10, 5, 10);
 
 // OrbitControls
 const controls = new OrbitControls(camera, renderer.domElement);
@@ -59,7 +57,7 @@ const loader = new GLTFLoader().setPath('matilda/');
 loader.load('scene.gltf', (gltf) => {
   console.log('loading model');
   matildaModel = gltf.scene;
-  
+
   matildaModel.traverse((child) => {
     if (child.isMesh) {
       child.castShadow = true;
@@ -68,13 +66,9 @@ loader.load('scene.gltf', (gltf) => {
   });
 
   matildaModel.position.set(0, 0, 0);
-  matildaModel.scale.set(0.02, 0.02, 0.02);
+  matildaModel.scale.set(0.028, 0.028, 0.028);
   scene.add(matildaModel);
 });
-
-const boxHelper = new THREE.BoxHelper(matildaModel, 0xff0000);
-scene.add(boxHelper);
-
 
 // Анимация
 function animate() {
