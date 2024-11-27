@@ -66,7 +66,7 @@ loader.load('scene.gltf', (gltf) => {
   });
 
   matildaModel.position.set(0, 0, 0);
-  matildaModel.scale.set(0.028, 0.028, 0.028);
+  matildaModel.scale.set(0.01, 0.01, 0.01);
   scene.add(matildaModel);
 });
 
